@@ -11,8 +11,8 @@ jobs:
         run: |
           echo "START BUILD"
 
-          apt update && apt upgrade -y
-          apt install -y git
+          sudo apt update && sudo apt upgrade -y
+          sudo apt install -y git
           git clone https://github.com/samukhin/enlightenment17
           cd enlightenment17
           ls -la
