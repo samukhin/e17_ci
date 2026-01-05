@@ -206,6 +206,8 @@ jobs:
         run: |
           set -x
           echo "START build"
+
+          sudo apt-get install -y libdbus-1-dev
           
           cd e_dbus-1.7.10
           dpkg-buildpackage -us -uc -b
