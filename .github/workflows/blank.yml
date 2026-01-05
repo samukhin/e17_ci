@@ -12,7 +12,7 @@ jobs:
           echo "START Upgrade"
 
           sudo apt update && sudo apt upgrade -y
-          sudo apt install -y wget unzip git dpkg-dev build-essential debhelper  automake1.11
+          sudo apt install -y wget unzip git dpkg-dev build-essential debhelper automake1.11 cdbs check subversion doxygen
           apt-mark showmanual
           
           echo "END Upgrade"
@@ -108,7 +108,6 @@ jobs:
         run: |
           set -x
           echo "START Clone"
-          sudo apt-get install -y subversion doxygen
           
           cd eina-1.7.10
           dpkg-buildpackage -us -uc -b
