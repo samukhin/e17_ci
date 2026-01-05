@@ -7,12 +7,12 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     steps:
-      - name: Upgrade apt and install git
+      - name: Upgrade apt and install utils
         run: |
           echo "START Upgrade"
 
           sudo apt update && sudo apt upgrade -y
-          sudo apt install -y wget unzip git
+          sudo apt install -y wget unzip git dpkg-dev
           apt-mark showmanual
           
           echo "END Upgrade"
@@ -72,22 +72,45 @@ jobs:
           tar xf evas_generic_loaders-1.17.0.tar.xz
           tar xf enlightenment-0.17.6.tar.bz2
 
-          cp -rv enlightenment17/debian-eina eina-1.7.10/debian
-          cp -rv enlightenment17/debian-eet eet-1.7.10/debian
-          cp -rv enlightenment17/debian-evas evas-1.7.10/debian
-          cp -rv enlightenment17/debian-ecore ecore-1.7.10/debian
-          cp -rv enlightenment17/debian-embryo embryo-1.7.10/debian
-          cp -rv enlightenment17/debian-eio eio-1.7.10/debian
-          cp -rv enlightenment17/debian-edje edje-1.7.10/debian
-          cp -rv enlightenment17/debian-emotion emotion-1.7.10/debian
-          cp -rv enlightenment17/debian-edbus e_dbus-1.7.10/debian
-          cp -rv enlightenment17/debian-ethumb ethumb-1.7.10/debian
-          cp -rv enlightenment17/debian-eina eina-1.7.10/debian
-          cp -rv enlightenment17/debian-efreet efreet-1.7.10/debian
-          cp -rv enlightenment17/debian-elementary elementary-1.7.10/debian
-          cp -rv enlightenment17/debian-eeze eeze-1.7.10/debian
-          cp -rv enlightenment17/debian-enlightenment176 enlightenment-0.17.6/debian
+          cp -r enlightenment17/debian-eina eina-1.7.10/debian
+          cp -r enlightenment17/debian-eet eet-1.7.10/debian
+          cp -r enlightenment17/debian-evas evas-1.7.10/debian
+          cp -r enlightenment17/debian-ecore ecore-1.7.10/debian
+          cp -r enlightenment17/debian-embryo embryo-1.7.10/debian
+          cp -r enlightenment17/debian-eio eio-1.7.10/debian
+          cp -r enlightenment17/debian-edje edje-1.7.10/debian
+          cp -r enlightenment17/debian-emotion emotion-1.7.10/debian
+          cp -r enlightenment17/debian-edbus e_dbus-1.7.10/debian
+          cp -r enlightenment17/debian-ethumb ethumb-1.7.10/debian
+          cp -r enlightenment17/debian-eina eina-1.7.10/debian
+          cp -r enlightenment17/debian-efreet efreet-1.7.10/debian
+          cp -r enlightenment17/debian-elementary elementary-1.7.10/debian
+          
+          cp -r enlightenment17/debian-terminology terminology-0.1.0/debian
+          
+          cp -r enlightenment17/debian-terminology terminology-0.2.0/debian
+          cd terminology-0.2.0
+          git apply ../enlightenment17/terminology-patches/terminology020_0.patch
+          git apply ../enlightenment17/terminology-patches/terminology020_1.patch
+          cd ../
+          
+          rm -rf terminology-0.3.0/debian
+          cp -r enlightenment17/debian-terminology terminology-0.3.0/debian
+          
+          cp -r enlightenment17/debian-eeze eeze-1.7.10/debian
+          cp -r enlightenment17/debian-enlightenment176 enlightenment-0.17.6/debian
 
           ls -la
         
           echo "END wget"
+
+      - name: Build eina
+        run: |
+          set -x
+          echo "START Clone"
+          
+          cd eina-1.7.10
+          dpkg-buildpackage -us -uc -b
+          
+          echo "END Clone"
+          
