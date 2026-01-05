@@ -111,7 +111,7 @@ jobs:
           
           cd eina-1.7.10
           dpkg-buildpackage -us -uc -b
-          apt-get install -y ../*.deb
+          sudo apt-get install -y ../*.deb
           
           echo "END build"
           
@@ -124,7 +124,7 @@ jobs:
           
           cd eet-1.7.10
           dpkg-buildpackage -us -uc -b
-          apt-get install -y ../*.deb
+          sudo apt-get install -y ../*.deb
           
           echo "END build"
           
@@ -135,7 +135,7 @@ jobs:
           
           cd evas-1.7.10
           dpkg-buildpackage -us -uc -b
-          apt-get install -y ../*.deb
+          sudo apt-get install -y ../*.deb
           
           echo "END build"     
 
@@ -146,7 +146,7 @@ jobs:
           
           cd ecore-1.7.10
           dpkg-buildpackage -us -uc -b
-          apt-get install -y ../*.deb
+          sudo apt-get install -y ../*.deb
           
           echo "END build"   
 
@@ -157,7 +157,7 @@ jobs:
           
           cd embryo-1.7.10
           dpkg-buildpackage -us -uc -b
-          apt-get install -y ../*.deb
+          sudo apt-get install -y ../*.deb
           
           echo "END build"
 
@@ -168,7 +168,7 @@ jobs:
           
           cd eio-1.7.10
           dpkg-buildpackage -us -uc -b
-          apt-get install -y ../*.deb
+          sudo apt-get install -y ../*.deb
           
           echo "END build"
 
@@ -179,7 +179,7 @@ jobs:
           
           cd edje-1.7.10
           dpkg-buildpackage -us -uc -b
-          apt-get install -y ../*.deb
+          sudo apt-get install -y ../*.deb
           
           echo "END build"
 
@@ -190,7 +190,7 @@ jobs:
           
           cd emotion-1.7.10
           dpkg-buildpackage -us -uc -b
-          apt-get install -y ../*.deb
+          sudo apt-get install -y ../*.deb
           
           echo "END build"
 
@@ -201,7 +201,7 @@ jobs:
           
           cd e_dbus-1.7.10
           dpkg-buildpackage -us -uc -b
-          apt-get install -y ../*.deb
+          sudo apt-get install -y ../*.deb
           
           echo "END build"
 
@@ -212,7 +212,7 @@ jobs:
           
           cd ethumb-1.7.10
           dpkg-buildpackage -us -uc -b
-          apt-get install -y ../*.deb
+          sudo apt-get install -y ../*.deb
           
           echo "END build"
 
@@ -223,7 +223,7 @@ jobs:
           
           cd efreet-1.7.10
           dpkg-buildpackage -us -uc -b
-          apt-get install -y ../*.deb
+          sudo apt-get install -y ../*.deb
           
           echo "END build"
 
@@ -234,7 +234,7 @@ jobs:
           
           cd elementary-1.7.10
           dpkg-buildpackage -us -uc -b
-          apt-get install -y ../*.deb
+          sudo apt-get install -y ../*.deb
           
           echo "END build"
 
@@ -245,7 +245,7 @@ jobs:
           
           cd terminology-0.2.0
           dpkg-buildpackage -us -uc -b
-          apt-get install -y ../*.deb
+          sudo apt-get install -y ../*.deb
           
           echo "END build"
 
@@ -256,7 +256,7 @@ jobs:
           
           cd eeze-1.7.10
           dpkg-buildpackage -us -uc -b
-          apt-get install -y ../*.deb
+          sudo apt-get install -y ../*.deb
           
           echo "END build"
 
@@ -267,7 +267,7 @@ jobs:
           
           cd evas_generic_loaders-1.7.10
           dpkg-buildpackage -us -uc -b
-          apt-get install -y ../*.deb
+          sudo apt-get install -y ../*.deb
           
           echo "END build"
 
@@ -278,7 +278,7 @@ jobs:
           
           cd enlightenment-0.17.6
           dpkg-buildpackage -us -uc -b
-          apt-get install -y ../*.deb
+          sudo apt-get install -y ../*.deb
           
           echo "END build"
           
