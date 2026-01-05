@@ -219,6 +219,8 @@ jobs:
         run: |
           set -x
           echo "START build"
+
+          sudo apt-get install -y libexif-dev
           
           cd ethumb-1.7.10
           dpkg-buildpackage -us -uc -b
