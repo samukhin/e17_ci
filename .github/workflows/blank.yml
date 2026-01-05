@@ -12,7 +12,7 @@ jobs:
           echo "START Upgrade"
 
           sudo apt update && sudo apt upgrade -y
-          sudo apt install -y git
+          sudo apt install -y wget unzip git
           apt-mark showmanual
           
           echo "END Upgrade"
@@ -27,12 +27,67 @@ jobs:
           
           echo "END Clone"
           
-      - name: Check repo
+      - name: Wget components
         run: |
           set -x
-          echo "START Check"
+          echo "START wget"
           
-          pwd
+          wget http://distfiles.macports.org/eina/eina-1.7.10.tar.bz2
+          wget http://distfiles.macports.org/eet/eet-1.7.10.tar.bz2
+          wget http://distfiles.macports.org/evas/evas-1.7.10.tar.bz2
+          wget http://distfiles.macports.org/ecore/ecore-1.7.10.tar.bz2
+          wget http://distfiles.macports.org/embryo/embryo-1.7.10.tar.bz2
+          wget https://distro.ibiblio.org/slitaz/sources/packages-cooking/e/eio-1.7.10.tar.bz2
+          wget http://distfiles.macports.org/edje/edje-1.7.10.tar.bz2
+          wget https://distro.ibiblio.org/slitaz/sources/packages-cooking/e/emotion-1.7.10.tar.bz2
+          wget http://distfiles.macports.org/e_dbus/e_dbus-1.7.10.tar.bz2
+          wget https://distro.ibiblio.org/slitaz/sources/packages-cooking/e/ethumb-1.7.10.tar.bz2
+          wget http://distfiles.macports.org/efreet/efreet-1.7.10.tar.bz2
+          wget https://distro.ibiblio.org/slitaz/sources/packages-cooking/e/elementary-1.7.10.tar.bz2
+          wget https://github.com/borisfaure/terminology/archive/refs/tags/v0.1.0.zip
+          wget https://github.com/borisfaure/terminology/archive/refs/tags/v0.2.0.zip
+          wget https://ppa.launchpadcontent.net/efl/trunk/ubuntu/pool/main/t/terminology/terminology_0.3.0-1ppa2~saucy.tar.gz
+          wget https://distro.ibiblio.org/slitaz/sources/packages-cooking/e/eeze-1.7.10.tar.bz2
+          wget https://distro.ibiblio.org/slitaz/sources/packages-cooking/e/evas_generic_loaders-1.7.10.tar.bz2
+          wget https://download.enlightenment.org/rel/libs/evas_generic_loaders/evas_generic_loaders-1.17.0.tar.xz
+          wget https://distro.ibiblio.org/slitaz/sources/packages-cooking/e/enlightenment-0.17.6.tar.bz2
+
+          tar xf eina-1.7.10.tar.bz2
+          tar xf eet-1.7.10.tar.bz2
+          tar xf evas-1.7.10.tar.bz2
+          tar xf ecore-1.7.10.tar.bz2
+          tar xf embryo-1.7.10.tar.bz2
+          tar xf eio-1.7.10.tar.bz2
+          tar xf edje-1.7.10.tar.bz2
+          tar xf emotion-1.7.10.tar.bz2
+          tar xf e_dbus-1.7.10.tar.bz2
+          tar xf ethumb-1.7.10.tar.bz2
+          tar xf efreet-1.7.10.tar.bz2
+          tar xf elementary-1.7.10.tar.bz2
+          unzip v0.1.0.zip
+          unzip v0.2.0.zip
+          tar xf terminology_0.3.0-1ppa2~saucy.tar.gz
+          tar xf eeze-1.7.10.tar.bz2
+          tar xf evas_generic_loaders-1.7.10.tar.bz2
+          tar xf evas_generic_loaders-1.17.0.tar.xz
+          tar xf enlightenment-0.17.6.tar.bz2
+
+          cp -rv enlightenment17/debian-eina eina-1.7.10/debian
+          cp -rv enlightenment17/debian-eet eet-1.7.10/debian
+          cp -rv enlightenment17/debian-evas evas-1.7.10/debian
+          cp -rv enlightenment17/debian-ecore ecore-1.7.10/debian
+          cp -rv enlightenment17/debian-embryo embryo-1.7.10/debian
+          cp -rv enlightenment17/debian-eio eio-1.7.10/debian
+          cp -rv enlightenment17/debian-edje edje-1.7.10/debian
+          cp -rv enlightenment17/debian-emotion emotion-1.7.10/debian
+          cp -rv enlightenment17/debian-edbus e_dbus-1.7.10/debian
+          cp -rv enlightenment17/debian-ethumb ethumb-1.7.10/debian
+          cp -rv enlightenment17/debian-eina eina-1.7.10/debian
+          cp -rv enlightenment17/debian-efreet efreet-1.7.10/debian
+          cp -rv enlightenment17/debian-elementary elementary-1.7.10/debian
+          cp -rv enlightenment17/debian-eeze eeze-1.7.10/debian
+          cp -rv enlightenment17/debian-enlightenment176 enlightenment-0.17.6/debian
+
           ls -la
-          
-          echo "END Check"
+        
+          echo "END wget"
