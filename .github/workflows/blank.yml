@@ -193,6 +193,8 @@ jobs:
         run: |
           set -x
           echo "START build"
+
+          sudo apt-get install -y libgstreamer-plugins-base1.0-dev libxine2-dev
           
           cd emotion-1.7.10
           dpkg-buildpackage -us -uc -b
@@ -244,12 +246,34 @@ jobs:
           
           echo "END build"
 
-      - name: Build terminology
+      - name: Build terminology-01
+        run: |
+          set -x
+          echo "START build"
+          
+          cd terminology-0.1.0
+          dpkg-buildpackage -us -uc -b
+          sudo apt-get install -y ../*.deb
+          
+          echo "END build"
+
+      - name: Build terminology-02
         run: |
           set -x
           echo "START build"
           
           cd terminology-0.2.0
+          dpkg-buildpackage -us -uc -b
+          sudo apt-get install -y ../*.deb
+          
+          echo "END build"
+
+      - name: Build terminology-03
+        run: |
+          set -x
+          echo "START build"
+          
+          cd terminology-0.3.0
           dpkg-buildpackage -us -uc -b
           sudo apt-get install -y ../*.deb
           
