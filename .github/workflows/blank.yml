@@ -12,7 +12,7 @@ jobs:
           echo "START Upgrade"
 
           sudo apt update && sudo apt upgrade -y
-          sudo apt install -y wget unzip git dpkg-dev build-essential debhelper automake1.11 cdbs check subversion doxygen
+          sudo apt install -y wget unzip git dpkg-dev build-essential debhelper automake1.11 cdbs check cvs subversion doxygen
           apt-mark showmanual
           
           echo "END Upgrade"
@@ -145,6 +145,8 @@ jobs:
         run: |
           set -x
           echo "START build"
+
+          sudo apt-get install -y libcurl4-gnutls-dev libxcursor-dev libxss-dev libxinerama-dev libxrandr-dev libxcomposite-dev libxdamage-dev libxtst-dev
           
           cd ecore-1.7.10
           dpkg-buildpackage -us -uc -b
