@@ -107,10 +107,160 @@ jobs:
       - name: Build eina
         run: |
           set -x
-          echo "START Clone"
+          echo "START build"
           
           cd eina-1.7.10
           dpkg-buildpackage -us -uc -b
           
-          echo "END Clone"
+          echo "END build"
+          
+      - name: Build eet
+        run: |
+          set -x
+          echo "START build"
+          
+          cd eet-1.7.10
+          dpkg-buildpackage -us -uc -b
+          
+          echo "END build"
+          
+      - name: Build evas
+        run: |
+          set -x
+          echo "START build"
+          
+          cd evas-1.7.10
+          dpkg-buildpackage -us -uc -b
+          
+          echo "END build"     
+
+      - name: Build ecore
+        run: |
+          set -x
+          echo "START build"
+          
+          cd ecore-1.7.10
+          dpkg-buildpackage -us -uc -b
+          
+          echo "END build"   
+
+      - name: Build embryo
+        run: |
+          set -x
+          echo "START build"
+          
+          cd embryo-1.7.10
+          dpkg-buildpackage -us -uc -b
+          
+          echo "END build"
+
+      - name: Build eio
+        run: |
+          set -x
+          echo "START build"
+          
+          cd eio-1.7.10
+          dpkg-buildpackage -us -uc -b
+          
+          echo "END build"
+
+      - name: Build edje
+        run: |
+          set -x
+          echo "START build"
+          
+          cd edje-1.7.10
+          dpkg-buildpackage -us -uc -b
+          
+          echo "END build"
+
+      - name: Build emotion
+        run: |
+          set -x
+          echo "START build"
+          
+          cd emotion-1.7.10
+          dpkg-buildpackage -us -uc -b
+          
+          echo "END build"
+
+      - name: Build edbus
+        run: |
+          set -x
+          echo "START build"
+          
+          cd e_dbus-1.7.10
+          dpkg-buildpackage -us -uc -b
+          
+          echo "END build"
+
+      - name: Build ethumb
+        run: |
+          set -x
+          echo "START build"
+          
+          cd ethumb-1.7.10
+          dpkg-buildpackage -us -uc -b
+          
+          echo "END build"
+
+      - name: Build efreet
+        run: |
+          set -x
+          echo "START build"
+          
+          cd efreet-1.7.10
+          dpkg-buildpackage -us -uc -b
+          
+          echo "END build"
+
+      - name: Build elementary
+        run: |
+          set -x
+          echo "START build"
+          
+          cd elementary-1.7.10
+          dpkg-buildpackage -us -uc -b
+          
+          echo "END build"
+
+      - name: Build terminology
+        run: |
+          set -x
+          echo "START build"
+          
+          cd terminology-0.2.0
+          dpkg-buildpackage -us -uc -b
+          
+          echo "END build"
+
+      - name: Build eeze
+        run: |
+          set -x
+          echo "START build"
+          
+          cd eeze-1.7.10
+          dpkg-buildpackage -us -uc -b
+          
+          echo "END build"
+
+      - name: Build evas-generic-loaders
+        run: |
+          set -x
+          echo "START build"
+          
+          cd evas_generic_loaders-1.7.10
+          dpkg-buildpackage -us -uc -b
+          
+          echo "END build"
+
+      - name: Build e17
+        run: |
+          set -x
+          echo "START build"
+          
+          cd enlightenment-0.17.6
+          dpkg-buildpackage -us -uc -b
+          
+          echo "END build"
           
