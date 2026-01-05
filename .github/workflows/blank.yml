@@ -180,6 +180,8 @@ jobs:
         run: |
           set -x
           echo "START build"
+
+          sudo apt-get install -y liblua5.1-0-dev
           
           cd edje-1.7.10
           dpkg-buildpackage -us -uc -b
