@@ -256,6 +256,7 @@ jobs:
           echo "START build"
           
           cd terminology-0.1.0
+          ./autogen.sh
           dpkg-buildpackage -us -uc -b
           sudo apt-get install -y ../*.deb
           
@@ -267,6 +268,7 @@ jobs:
           echo "START build"
           
           cd terminology-0.2.0
+          ./autogen.sh
           dpkg-buildpackage -us -uc -b
           sudo apt-get install -y ../*.deb
           
@@ -278,6 +280,7 @@ jobs:
           echo "START build"
           
           cd terminology-0.3.0
+          ./autogen.sh
           dpkg-buildpackage -us -uc -b
           sudo apt-get install -y ../*.deb
           
