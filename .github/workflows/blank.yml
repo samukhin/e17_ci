@@ -7,15 +7,32 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     steps:
-      - name: Build
+      - name: Upgrade apt and install git
         run: |
-          echo "START BUILD"
+          echo "START Upgrade"
 
           sudo apt update && sudo apt upgrade -y
           sudo apt install -y git
+          apt-mark showmanual
+          
+          echo "END Upgrade"
+          
+      - name: Clone repo
+        run: |
+          echo "START Clone"
+          
           git clone https://github.com/samukhin/enlightenment17
           cd enlightenment17
           ls -la
           
-          echo "END BUILD"
+          echo "END Clone"
           
+      - name: Check repo
+        run: |
+          set -x
+          echo "START Check"
+          
+          pwd
+          ls -la
+          
+          echo "END Check"
