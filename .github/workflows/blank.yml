@@ -11,12 +11,20 @@ jobs:
         run: |
           echo "START Upgrade"
 
-          sudo apt update && sudo apt upgrade -y
+          sudo apt update && sudo apt upgrade -y && apt autoremove -y
+          apt-mark showmanual
+          
+          echo "END Upgrade"
+
+      - name: Install common build utils
+        run: |
+          echo "START Upgrade"
+
           sudo apt install -y wget unzip git dpkg-dev build-essential debhelper automake1.11 cdbs check cvs subversion doxygen
           apt-mark showmanual
           
           echo "END Upgrade"
-          
+
       - name: Clone repo
         run: |
           echo "START Clone"
@@ -119,9 +127,17 @@ jobs:
           
           cd eina-1.7.10
           dpkg-buildpackage -us -uc -b
-          sudo apt-get install -y ../*.deb
           
           echo "END build"
+
+      - name: Install eina
+        run: |
+          set -x
+          echo "START Install"
+
+          sudo apt-get install -y ../*.deb
+          
+          echo "END Install"
 
       - name: Install eet deps
         run: |
@@ -139,9 +155,17 @@ jobs:
           
           cd eet-1.7.10
           dpkg-buildpackage -us -uc -b
-          sudo apt-get install -y ../*.deb
           
           echo "END build"
+
+      - name: Install eet
+        run: |
+          set -x
+          echo "START Install"
+
+          sudo apt-get install -y ../*.deb
+          
+          echo "END Install"
 
       - name: Install evas deps
         run: |
@@ -159,9 +183,17 @@ jobs:
           
           cd evas-1.7.10
           dpkg-buildpackage -us -uc -b
-          sudo apt-get install -y ../*.deb
           
           echo "END build"     
+
+      - name: Install evas
+        run: |
+          set -x
+          echo "START Install"
+
+          sudo apt-get install -y ../*.deb
+          
+          echo "END Install"
 
       - name: Install ecore deps
         run: |
@@ -179,9 +211,17 @@ jobs:
           
           cd ecore-1.7.10
           dpkg-buildpackage -us -uc -b
-          sudo apt-get install -y ../*.deb
           
           echo "END build"   
+
+      - name: Install ecore
+        run: |
+          set -x
+          echo "START Install"
+
+          sudo apt-get install -y ../*.deb
+          
+          echo "END Install"
 
       - name: Build embryo
         run: |
@@ -190,9 +230,17 @@ jobs:
           
           cd embryo-1.7.10
           dpkg-buildpackage -us -uc -b
-          sudo apt-get install -y ../*.deb
           
           echo "END build"
+
+      - name: Install embryo
+        run: |
+          set -x
+          echo "START Install"
+
+          sudo apt-get install -y ../*.deb
+          
+          echo "END Install"
 
       - name: Build eio
         run: |
@@ -201,9 +249,17 @@ jobs:
           
           cd eio-1.7.10
           dpkg-buildpackage -us -uc -b
-          sudo apt-get install -y ../*.deb
           
           echo "END build"
+
+      - name: Install eio
+        run: |
+          set -x
+          echo "START Install"
+
+          sudo apt-get install -y ../*.deb
+          
+          echo "END Install"
 
       - name: Install edje deps
         run: |
@@ -221,9 +277,17 @@ jobs:
           
           cd edje-1.7.10
           dpkg-buildpackage -us -uc -b
-          sudo apt-get install -y ../*.deb
           
           echo "END build"
+
+      - name: Install edje
+        run: |
+          set -x
+          echo "START Install"
+
+          sudo apt-get install -y ../*.deb
+          
+          echo "END Install"
 
       - name: Install emotion deps
         run: |
@@ -241,9 +305,17 @@ jobs:
           
           cd emotion-1.7.10
           dpkg-buildpackage -us -uc -b
-          sudo apt-get install -y ../*.deb
           
           echo "END build"
+
+      - name: Install emotion
+        run: |
+          set -x
+          echo "START Install"
+
+          sudo apt-get install -y ../*.deb
+          
+          echo "END Install"
 
       - name: Install edbus deps
         run: |
@@ -261,9 +333,17 @@ jobs:
           
           cd e_dbus-1.7.10
           dpkg-buildpackage -us -uc -b
-          sudo apt-get install -y ../*.deb
           
           echo "END build"
+
+      - name: Install edbus
+        run: |
+          set -x
+          echo "START Install"
+
+          sudo apt-get install -y ../*.deb
+          
+          echo "END Install"
 
       - name: Install ethumb deps
         run: |
@@ -281,9 +361,17 @@ jobs:
           
           cd ethumb-1.7.10
           dpkg-buildpackage -us -uc -b
-          sudo apt-get install -y ../*.deb
           
           echo "END build"
+
+      - name: Install ethumb
+        run: |
+          set -x
+          echo "START Install"
+
+          sudo apt-get install -y ../*.deb
+          
+          echo "END Install"
 
       - name: Build efreet
         run: |
@@ -292,9 +380,17 @@ jobs:
           
           cd efreet-1.7.10
           dpkg-buildpackage -us -uc -b
-          sudo apt-get install -y ../*.deb
           
           echo "END build"
+
+      - name: Install efreet
+        run: |
+          set -x
+          echo "START Install"
+
+          sudo apt-get install -y ../*.deb
+          
+          echo "END Install"
 
       - name: Build elementary
         run: |
@@ -303,9 +399,17 @@ jobs:
           
           cd elementary-1.7.10
           dpkg-buildpackage -us -uc -b
-          sudo apt-get install -y ../*.deb
           
           echo "END build"
+
+      - name: Install elementary
+        run: |
+          set -x
+          echo "START Install"
+
+          sudo apt-get install -y ../*.deb
+          
+          echo "END Install"
 
       - name: Build terminology-01
         run: |
@@ -315,7 +419,6 @@ jobs:
           cd terminology-0.1.0
           ./autogen.sh
           dpkg-buildpackage -us -uc -b
-          sudo apt-get install -y ../*.deb
           
           echo "END build"
 
@@ -327,7 +430,6 @@ jobs:
           cd terminology-0.2.0
           ./autogen.sh
           dpkg-buildpackage -us -uc -b
-          sudo apt-get install -y ../*.deb
           
           echo "END build"
 
@@ -339,9 +441,17 @@ jobs:
           cd terminology-0.3.0
           ./autogen.sh
           dpkg-buildpackage -us -uc -b
-          sudo apt-get install -y ../*.deb
           
           echo "END build"
+
+      - name: Install terminology
+        run: |
+          set -x
+          echo "START Install"
+
+          sudo apt-get install -y ../*.deb
+          
+          echo "END Install"
 
       - name: Build eeze
         run: |
@@ -350,14 +460,22 @@ jobs:
           
           cd eeze-1.7.10
           dpkg-buildpackage -us -uc -b
-          sudo apt-get install -y ../*.deb
           
           echo "END build"
+
+      - name: Install eeze
+        run: |
+          set -x
+          echo "START Install"
+
+          sudo apt-get install -y ../*.deb
+          
+          echo "END Install"
 
       - name: Install evas-generic-loaders deps
         run: |
           set -x
-          echo "START instal"
+          echo "START install"
 
           sudo apt-get install -y libspectre-dev libpoppler-dev libpoppler-private-dev
           
@@ -370,7 +488,6 @@ jobs:
           
           cd evas_generic_loaders-1.7.10
           dpkg-buildpackage -us -uc -b
-          sudo apt-get install -y ../*.deb
           
           echo "END build"
 
@@ -383,7 +500,24 @@ jobs:
           ./configure
           make || true
           #dpkg-buildpackage -us -uc -b
-          #sudo apt-get install -y ../*.deb
+          
+          echo "END build"
+
+      - name: Install evas-generic-loaders
+        run: |
+          set -x
+          echo "START Install"
+
+          sudo apt-get install -y ../*.deb
+          
+          echo "END Install"
+
+      - name: Install e17 deps
+        run: |
+          set -x
+          echo "START build"
+
+          sudo apt-get install -y libasound2-dev libpam0g-dev libxcb-shape0-dev libxcb-keysyms1-dev
           
           echo "END build"
 
@@ -394,7 +528,14 @@ jobs:
           
           cd enlightenment-0.17.6
           dpkg-buildpackage -us -uc -b
-          sudo apt-get install -y ../*.deb
           
           echo "END build"
+
+      - name: Install e17
+        run: |
+          set -x
+          echo "START Install"
+
+          sudo apt-get install -y ../*.deb
           
+          echo "END Install"
