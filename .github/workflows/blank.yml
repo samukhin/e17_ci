@@ -135,7 +135,7 @@ jobs:
           set -x
           echo "START Install"
 
-          sudo apt-get install -y ../*.deb
+          sudo apt-get install -y ./*.deb
           
           echo "END Install"
 
@@ -163,7 +163,7 @@ jobs:
           set -x
           echo "START Install"
 
-          sudo apt-get install -y ../*.deb
+          sudo apt-get install -y ./*.deb
           
           echo "END Install"
 
@@ -191,7 +191,7 @@ jobs:
           set -x
           echo "START Install"
 
-          sudo apt-get install -y ../*.deb
+          sudo apt-get install -y ./*.deb
           
           echo "END Install"
 
@@ -219,7 +219,7 @@ jobs:
           set -x
           echo "START Install"
 
-          sudo apt-get install -y ../*.deb
+          sudo apt-get install -y ./*.deb
           
           echo "END Install"
 
@@ -238,7 +238,7 @@ jobs:
           set -x
           echo "START Install"
 
-          sudo apt-get install -y ../*.deb
+          sudo apt-get install -y ./*.deb
           
           echo "END Install"
 
@@ -257,7 +257,7 @@ jobs:
           set -x
           echo "START Install"
 
-          sudo apt-get install -y ../*.deb
+          sudo apt-get install -y ./*.deb
           
           echo "END Install"
 
@@ -285,7 +285,7 @@ jobs:
           set -x
           echo "START Install"
 
-          sudo apt-get install -y ../*.deb
+          sudo apt-get install -y ./*.deb
           
           echo "END Install"
 
@@ -313,7 +313,7 @@ jobs:
           set -x
           echo "START Install"
 
-          sudo apt-get install -y ../*.deb
+          sudo apt-get install -y ./*.deb
           
           echo "END Install"
 
@@ -341,7 +341,7 @@ jobs:
           set -x
           echo "START Install"
 
-          sudo apt-get install -y ../*.deb
+          sudo apt-get install -y ./*.deb
           
           echo "END Install"
 
@@ -369,7 +369,7 @@ jobs:
           set -x
           echo "START Install"
 
-          sudo apt-get install -y ../*.deb
+          sudo apt-get install -y ./*.deb
           
           echo "END Install"
 
@@ -388,7 +388,7 @@ jobs:
           set -x
           echo "START Install"
 
-          sudo apt-get install -y ../*.deb
+          sudo apt-get install -y ./*.deb
           
           echo "END Install"
 
@@ -407,7 +407,7 @@ jobs:
           set -x
           echo "START Install"
 
-          sudo apt-get install -y ../*.deb
+          sudo apt-get install -y ./*.deb
           
           echo "END Install"
 
@@ -449,7 +449,7 @@ jobs:
           set -x
           echo "START Install"
 
-          sudo apt-get install -y ../*.deb
+          sudo apt-get install -y ./*.deb
           
           echo "END Install"
 
@@ -468,7 +468,7 @@ jobs:
           set -x
           echo "START Install"
 
-          sudo apt-get install -y ../*.deb
+          sudo apt-get install -y ./*.deb
           
           echo "END Install"
 
@@ -508,7 +508,7 @@ jobs:
           set -x
           echo "START Install"
 
-          sudo apt-get install -y ../*.deb
+          sudo apt-get install -y ./*.deb
           
           echo "END Install"
 
@@ -536,6 +536,6 @@ jobs:
           set -x
           echo "START Install"
 
-          sudo apt-get install -y ../*.deb
+          sudo apt-get install -y ./*.deb
           
           echo "END Install"
