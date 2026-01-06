@@ -98,6 +98,7 @@ jobs:
           cp -r enlightenment17/debian-terminology terminology-0.3.0/debian
           
           cp -r enlightenment17/debian-eeze eeze-1.7.10/debian
+          cp -r enlightenment17/debian-evas_generic_loaders evas_generic_loaders-1.7.10/debian
           cp -r enlightenment17/debian-enlightenment176 enlightenment-0.17.6/debian
 
           ls -la
