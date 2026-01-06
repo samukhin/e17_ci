@@ -90,8 +90,8 @@ jobs:
           
           cp -r enlightenment17/debian-terminology terminology-0.2.0/debian
           cd terminology-0.2.0
-          git apply ../enlightenment17/terminology-patches/terminology020_0.patch
-          git apply ../enlightenment17/terminology-patches/terminology020_1.patch
+          git apply ../enlightenment17/terminology020-patches/terminology020_0.patch
+          git apply ../enlightenment17/terminology020-patches/terminology020_1.patch
           cd ../
           
           rm -rf terminology-0.3.0/debian
@@ -101,6 +101,10 @@ jobs:
           
           cp -r enlightenment17/debian-evas_generic_loaders evas_generic_loaders-1.7.10/debian
           echo '02_fix.patch' >> evas_generic_loaders-1.7.10/debian/patches/series
+
+          cd evas_generic_loaders-1.17.0
+          git apply ../enlightenment17/evas_generic_loaders17-patches/evas_generic_loaders-1.17.0.patch
+          cd ../
           
           cp -r enlightenment17/debian-enlightenment176 enlightenment-0.17.6/debian
 
