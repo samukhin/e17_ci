@@ -11,7 +11,7 @@ jobs:
         run: |
           echo "START Upgrade"
 
-          sudo apt update && sudo apt upgrade -y && apt autoremove -y
+          sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y --purge
           apt-mark showmanual
           
           echo "END Upgrade"
