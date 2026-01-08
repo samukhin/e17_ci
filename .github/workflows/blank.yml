@@ -108,7 +108,8 @@ jobs:
           cp -r enlightenment17/debian-eeze eeze-1.7.10/debian
           
           cp -r enlightenment17/debian-evas_generic_loaders evas_generic_loaders-1.7.10/debian
-          echo '02_fix.patch' >> evas_generic_loaders-1.7.10/debian/patches/series
+          #Патч не нужен для ubuntu 22.04, нужен для 24.04
+          #echo '02_fix.patch' >> evas_generic_loaders-1.7.10/debian/patches/series
 
           cd evas_generic_loaders-1.17.0
           git apply ../enlightenment17/evas_generic_loaders17-patches/evas_generic_loaders-1.17.0.patch
